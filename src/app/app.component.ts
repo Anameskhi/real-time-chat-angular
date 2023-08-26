@@ -9,13 +9,13 @@ import { Test } from './core/interfaces/test.interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  // title = 'frontend';
-  // constructor(
-  //   private testSrvc: TestService
-  // ){}
+  title = 'frontend';
+  constructor(
+    private testSrvc: TestService
+  ){}
 
-  // testValue: Observable<Test> = this.testSrvc.getTest()
+  testValue: Observable<Test> = this.testSrvc.getTest()
   ngOnInit(): void {
-    // this.testSrvc.getTest().subscribe(res=> console.log(res))
+    this.testSrvc.getTest().subscribe(res=> console.log(res))
   }
 }

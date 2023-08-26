@@ -8,11 +8,11 @@ import { Test } from '../interfaces/test.interface';
 })
 export class TestService {
 
-  // constructor(
-  //   private http: HttpClient
-  // ) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  // getTest(): Observable<Test>{
-  //   return this.http.get<Test>('api')
-  // }
+  getTest(): Observable<Test>{
+    return this.http.get<Test>('api')
+  }
 }

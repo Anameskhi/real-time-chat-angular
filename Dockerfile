@@ -1,11 +1,12 @@
-FROM node:14 AS frontend-development
+FROM node:16
 
-WORKDIR /home/ana/real-time-chat-app/frontend
-
-
+WORKDIR /usr/src/app
 COPY package*.json ./
+
 RUN npm install
-RUN npm install -g @angular/cli@12.0.0 
+RUN npm install -g @angular/cli@15.0.0 
+
 COPY . .
+
 RUN npm run build
 EXPOSE 4200

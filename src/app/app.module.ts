@@ -13,6 +13,7 @@ import {MatToolbarModule, MatToolbarRow} from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatCardModule,
     ReactiveFormsModule,
     MatTabsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule
     
   ],
   providers: [],

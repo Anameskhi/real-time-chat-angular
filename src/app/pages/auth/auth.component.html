@@ -5,16 +5,21 @@
       <mat-card-title>Login/Register</mat-card-title>
       <mat-card-subtitle>Real-Time Chat</mat-card-subtitle>
     </mat-card-header>
-    <nav mat-tab-nav-bar class="example-card ">
-      <a mat-tab-link *ngFor="let link of navLinks"
+ 
+        <nav mat-tab-nav-bar class="example-card ">
+          <a mat-tab-link *ngFor="let link of navLinks"
+         
+          [routerLink]="link.link"
+          routerLinkActive #rla="routerLinkActive"
+          [active]="rla.isActive">
+          {{link.label}}
+          </a>
+          </nav>
+        <router-outlet></router-outlet>
+
+    
+    
      
-      [routerLink]="link.link"
-      routerLinkActive #rla="routerLinkActive"
-      [active]="rla.isActive">
-      {{link.label}}
-      </a>
-      </nav>
-      <router-outlet></router-outlet>
 
   </mat-card>
 </div>

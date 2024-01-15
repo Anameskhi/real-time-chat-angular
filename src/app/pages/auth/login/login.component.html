@@ -6,9 +6,9 @@
     placeholder="Your email"
     name="email"
     formControlName="email">
-    <mat-error *ngIf="getEmail?.errors?.['required'] && getEmail?.touched">Email is required</mat-error>
-    <mat-error *ngIf="getEmail?.errors?.['email'] && getEmail?.touched">Email form isn't correct</mat-error>
+    <mat-icon matSuffix>email</mat-icon>
   </mat-form-field>
+
 
   <mat-form-field class="example-full-width">
     <mat-label>Password</mat-label>
@@ -17,9 +17,8 @@
     placeholder="Your password"  
     name="password"
     formControlName="password">
-    <mat-error *ngIf="getPassword?.errors?.['required'] && getPassword?.touched">Password is required</mat-error>
-    <mat-error *ngIf="getPassword?.errors?.['minlength'] && getPassword?.touched">Password length must be more than 3 characters</mat-error>
-    <mat-error *ngIf="getPassword?.errors?.['maxlength'] && getPassword?.touched">Password length must be less than 10 characters</mat-error>
+    <mat-icon matSuffix>vpn_key</mat-icon>
+
   </mat-form-field>
   
   <button  class="mat-button" type="submit" mat-raised-button color="primary">Login</button> <br>

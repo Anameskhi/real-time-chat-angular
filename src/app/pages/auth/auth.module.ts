@@ -25,7 +25,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatToolbarModule,
     MatCardModule,
     MatTabsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule
   ]
 })
 export class AuthModule { }

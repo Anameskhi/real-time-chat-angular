@@ -6,7 +6,7 @@
     placeholder="Your fast name"
     name="firstName"
     formControlName="firstName">
-    <mat-error *ngIf="getFirstName?.errors?.['required'] && getFirstName?.touched">First Name is required</mat-error>
+    <mat-icon matSuffix>person</mat-icon>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
@@ -16,7 +16,7 @@
     placeholder="Your last name"
     name="lastName"
     formControlName="lastName">
-    <mat-error *ngIf="getLastName?.errors?.['required'] && getLastName?.touched">Last Name is required</mat-error>
+    <mat-icon matSuffix>person</mat-icon>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
@@ -26,8 +26,7 @@
     placeholder="example@yahoo.com"
     name="email"
     formControlName="email">
-    <mat-error *ngIf="getEmail?.errors?.['required'] && getEmail?.touched">Email is required</mat-error>
-    <mat-error *ngIf="getEmail?.errors?.['email'] && getEmail?.touched">Email form isn't correct</mat-error>
+    <mat-icon matSuffix>email</mat-icon>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
@@ -37,11 +36,17 @@
     matInput placeholder="Your password"
     name="password"
     formControlName="password">
-    <mat-error *ngIf="getPassword?.errors?.['required'] && getPassword?.touched">Password is required</mat-error>
-    <mat-error *ngIf="getPassword?.errors?.['minlength'] && getPassword?.touched">Password length must be more than 3 characters</mat-error>
-    <mat-error *ngIf="getPassword?.errors?.['maxlength'] && getPassword?.touched">Password length must be less than 10 characters</mat-error>
+    <mat-icon matSuffix>vpn_key</mat-icon>
   </mat-form-field>
-
+  <mat-form-field class="example-full-width">
+    <mat-label>Confirm Password</mat-label>
+    <input 
+    type="password" 
+    matInput placeholder="Your password"
+    name="password"
+    formControlName="password">
+    <mat-icon matSuffix>vpn_key</mat-icon>
+  </mat-form-field>
 
   <button  class="mat-button"  type="submit" mat-raised-button color="primary">Register</button> <br>
 

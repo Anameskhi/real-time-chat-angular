@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @Component({
   selector: 'app-auth',
@@ -7,25 +9,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent {
-  title = 'angular-material-tab-router';  
-  navLinks: any[];
-  activeLinkIndex = -1; 
-  constructor(private router: Router) {
-    this.navLinks = [
-        {
-            label: 'Login',
-            link: './login',
-            index: 0
-        }, {
-            label: 'Register',
-            link: './register',
-            index: 1
-        }
-    ];
-}
-ngOnInit(): void {
-  this.router.events.subscribe((res) => {
-      this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
-  });
-}
+  constructor(private router: Router) {}
+  routes: Routes = [
+    {
+      path: 'auth',
+      component: AuthComponent,
+      children: [
+        { path: 'login', component: LoginComponent },
+        { path: 'register', component: RegisterComponent },
+        { path: '', redirectTo: 'login', pathMatch: 'full' },
+      ],
+    },
+  ];
+  tabChanged(index: number): void {
+    if (index === 0) {
+      this.router.navigate(['/auth/login']);
+    } else if (index === 1) {
+      this.router.navigate(['/auth/register']);
+    }
+  }
 }

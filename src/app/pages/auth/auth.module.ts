@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatCardModule,
     MatTabsModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule,
   ]
 })
 export class AuthModule { }

@@ -11,7 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule, MatToolbarRow} from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 
@@ -33,7 +33,8 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
     ReactiveFormsModule,
     MatTabsModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    FormsModule
     
   ],
   providers: [],

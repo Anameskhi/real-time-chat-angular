@@ -1,0 +1,18 @@
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <a  routerLink="/" class="spacer" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>home</mat-icon>
+        </a>
+         <span class="spacer"></span>
+         <!-- <div *ngIf = '!authorized'>
+          <a mat-button routerLink="/auth/login">Login</a>
+          <a mat-button routerLink="/auth/register">Register</a>
+         </div> -->
+         
+         <a  *ngIf = 'authorized' mat-icon-button class="example-icon" aria-label="Example icon-button with person icon"  >
+          <mat-icon>power_settings_new</mat-icon>
+        </a>
+      </mat-toolbar-row>
+   </mat-toolbar>
+
+  <router-outlet></router-outlet>

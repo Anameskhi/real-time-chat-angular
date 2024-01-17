@@ -17,11 +17,13 @@ const routes: Routes = [
     children:[
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    data: { tabIndex: 0 },
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    data: { tabIndex: 1 },
   },
 ]
 }

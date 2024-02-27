@@ -1,4 +1,4 @@
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private selectedTabIndexSubject = new BehaviorSubject<number>(0);
   selectedTabIndex$ = this.selectedTabIndexSubject.asObservable();
-
+  currentRoute$ = new Subject()
   updateSelectedTabIndex(index: number): void {
     this.selectedTabIndexSubject.next(index);
   }

@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,8 +37,9 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatButtonModule,
     MatFormFieldModule,
     FormsModule,
-    MatStepperModule
-    
+    MatStepperModule,
+    CommonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

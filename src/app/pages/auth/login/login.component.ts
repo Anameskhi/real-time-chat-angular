@@ -5,7 +5,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
-import { FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule, Valida
   styleUrls: ['./login.component.scss'],
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule,MatToolbarModule,MatCardModule,
-  ReactiveFormsModule],
+  ReactiveFormsModule,CommonModule],
 })
 export class LoginComponent {
   hide = true;
@@ -26,9 +27,9 @@ export class LoginComponent {
   }
 
   form: FormGroup = new FormGroup(
-    { 
+    {
       email: new FormControl('',[
-        Validators.required, 
+        Validators.required,
         Validators.email]),
       password: new FormControl('',[
         Validators.required,
@@ -40,7 +41,7 @@ export class LoginComponent {
     submit(){
       this.form.markAllAsTouched()
       if(this.form.invalid)return;
-  
+
         console.log(this.form.value)
     }
 }

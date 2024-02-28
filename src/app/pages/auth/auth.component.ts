@@ -1,7 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute, Routes } from '@angular/router';
-import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -43,7 +42,6 @@ export class AuthComponent implements OnInit {
       this.updateSelectedTabManual();
     });
 
-    // Ensure selected tab index is correctly initialized on component load
     this.updateSelectedTabManual();
   }
 
@@ -65,7 +63,6 @@ export class AuthComponent implements OnInit {
     } else if (currentRoute === 'register') {
       this.tabChangedIndex = 1;
     } else {
-      // Fallback to a default tab index if the route is neither 'login' nor 'register'
       this.tabChangedIndex = 0;
     }
   }

@@ -64,14 +64,16 @@ export class RegisterComponent {
     if(this.form.invalid)return;
 
       console.log(this.form.value)
-      this.userService.create({
-        email: this.getEmail.value,
-        password: this.getPassword.value,
-        username: this.getUsername.value
-
-      }).pipe(
+      this.userService.create(
+        this.form.value
+      //   {
+      //   email: this.getEmail.value,
+      //   password: this.getPassword.value,
+      //   username: this.getUsername.value
+      // }
+      ).pipe(
         tap((res) => console.log(res)))
-        .subscribe()
+        .subscribe((res) => console.log(res))
 
   }
 

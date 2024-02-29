@@ -7,6 +7,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { UserService } from 'src/app/core/services/user-service/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -14,6 +16,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
+  providers: [UserService, MatSnackBar],
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule,MatToolbarModule,MatCardModule,
   ReactiveFormsModule,CommonModule],
 })
@@ -25,7 +28,7 @@ export class LoginComponent {
   get getPassword(){
     return this.form.get('password')
   }
-
+ constructor(private userService: UserService){}
   form: FormGroup = new FormGroup(
     {
       email: new FormControl('',[
@@ -43,5 +46,6 @@ export class LoginComponent {
       if(this.form.invalid)return;
 
         console.log(this.form.value)
+        this.userService.login().subscribe(res=>console.log(res))
     }
 }

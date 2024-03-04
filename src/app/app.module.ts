@@ -17,7 +17,7 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
-// import { JwtModule } from '@auth0/angular-jwt';
+import { JwtModule } from '@auth0/angular-jwt';
 
 export function tokenGetter(){
   return localStorage.getItem("Token")

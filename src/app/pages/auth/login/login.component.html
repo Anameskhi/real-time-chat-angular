@@ -18,6 +18,7 @@
     matInput
     placeholder="Your password"
     name="password"
+    type="password"
     formControlName="password">
     <mat-icon matSuffix>vpn_key</mat-icon>
     <mat-error *ngIf="getPassword?.errors?.['required'] && getPassword?.touched">Password is required</mat-error>

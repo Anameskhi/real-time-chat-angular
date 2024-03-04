@@ -63,17 +63,12 @@ export class RegisterComponent {
     this.form.markAllAsTouched()
     if(this.form.invalid)return;
 
-      console.log(this.form.value)
       this.userService.create(
         this.form.value
-      //   {
-      //   email: this.getEmail.value,
-      //   password: this.getPassword.value,
-      //   username: this.getUsername.value
-      // }
       ).pipe(
-        tap((res) => console.log(res)))
-        .subscribe((res) => console.log(res))
+        tap(() => this.router.navigate(['auth/login']))
+        )
+        .subscribe()
 
   }
 

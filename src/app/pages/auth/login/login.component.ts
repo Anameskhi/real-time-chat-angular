@@ -9,6 +9,9 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { CommonModule } from '@angular/common';
 import { UserService } from 'src/app/core/services/user-service/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from 'src/app/core/services/auth-service/auth-service.service';
+import { tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,9 +19,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
-  providers: [UserService, MatSnackBar],
+  providers: [AuthService, MatSnackBar],
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule,MatToolbarModule,MatCardModule,
-  ReactiveFormsModule,CommonModule],
+ReactiveFormsModule,CommonModule],
 })
 export class LoginComponent {
   hide = true;
@@ -28,7 +31,7 @@ export class LoginComponent {
   get getPassword(){
     return this.form.get('password')
   }
- constructor(private userService: UserService){}
+ constructor(private authService: AuthService, private router: Router){}
   form: FormGroup = new FormGroup(
     {
       email: new FormControl('',[
@@ -45,7 +48,8 @@ export class LoginComponent {
       this.form.markAllAsTouched()
       if(this.form.invalid)return;
 
-        console.log(this.form.value)
-        this.userService.login().subscribe(res=>console.log(res))
+        this.authService.login(this.form.value).pipe(
+          tap(() => this.router.navigate(['private/dashboard']))
+        ).subscribe()
     }
 }

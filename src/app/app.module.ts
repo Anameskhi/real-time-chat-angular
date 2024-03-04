@@ -16,12 +16,18 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { CommonModule } from '@angular/common';
+import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
+// import { JwtModule } from '@auth0/angular-jwt';
 
+export function tokenGetter(){
+  return localStorage.getItem("Token")
+}
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,13 @@ import { CommonModule } from '@angular/common';
     MatFormFieldModule,
     FormsModule,
     MatStepperModule,
-    CommonModule
+    CommonModule,
+    // JwtModule.forRoot({
+    //   config: {
+    //     tokenGetter: tokenGetter,
+    //     allowedDomains: ['localhost:3000']
+    //   }
+    // })
 
   ],
   providers: [],

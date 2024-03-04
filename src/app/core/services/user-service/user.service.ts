@@ -22,8 +22,6 @@ export class UserService extends BaseService{
     )
   }
 
-  login(): Observable<any>{
-    return this.get('users/login')
-  }
+
 
 }

@@ -22,6 +22,10 @@ export class UserService extends BaseService{
     )
   }
 
+  getAllUSers(): Observable<IUser[]>{
+    return this.get<IUser[]>('users')
+  }
+
 
 
 }

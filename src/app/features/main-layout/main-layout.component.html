@@ -8,10 +8,11 @@
           <a mat-button routerLink="/auth/login">Login</a>
           <a mat-button routerLink="/auth/register">Register</a>
          </div> -->
-         
-         <a  *ngIf = 'authorized' mat-icon-button class="example-icon" aria-label="Example icon-button with person icon"  >
+
+         <a  *ngIf = 'authorized' mat-icon-button class="example-icon" aria-label="Example icon-button with person icon">
           <mat-icon>power_settings_new</mat-icon>
         </a>
+        <span (click)="logout()" class="logout material-icons">logout</span>
       </mat-toolbar-row>
    </mat-toolbar>
 
